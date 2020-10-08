@@ -6,6 +6,10 @@ image: ffc-grants-stubs
 
 labels: {}
 
+azureIdentity:
+  clientID: not-a-real-clientID
+  resourceID: not-a-real-resourceID
+
 containerConfigMap:
   name: ffc-grants-stubs-config-map
 
@@ -27,6 +31,8 @@ container:
   readOnlyRootFilesystem: true
   allowPrivilegeEscalation: false
   port: 3000
+  messageQueueHost: dummy
+  eligibilityQueueAddress: eligibility
 
 livenessProbe:
   path: /healthz

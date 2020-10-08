@@ -3,4 +3,6 @@
 data:
   NODE_ENV: {{ quote .Values.environment }}
   PORT: {{ quote .Values.container.port }}
+  MESSAGE_QUEUE_HOST: {{ quote .Values.container.messageQueueHost }}
+  ELIGIBILITY_QUEUE_ADDRESS: {{ quote .Values.container.eligibilityQueueAddress }}
 {{- end -}}
