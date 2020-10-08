@@ -59,13 +59,13 @@ config = [environment: 'dev']
       //   build.runTests(repoName, repoName, BUILD_NUMBER, tag, pr, config.environment)
       // }
 
-      stage('Create JUnit report') {
-        test.createJUnitReport()
-      }
+      // stage('Create JUnit report') {
+      //   test.createJUnitReport()
+      // }
 
-      stage('Fix lcov report') {
-        utils.replaceInFile(containerSrcFolder, localSrcFolder, lcovFile)
-      }
+      // stage('Fix lcov report') {
+      //   utils.replaceInFile(containerSrcFolder, localSrcFolder, lcovFile)
+      // }
 
       // stage('SonarCloud analysis') {
       //   test.analyseNodeJsCode(SONARCLOUD_ENV, SONAR_SCANNER, repoName, BRANCH_NAME, pr)
