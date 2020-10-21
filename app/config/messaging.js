@@ -5,6 +5,16 @@ const connectionDetails = {
 }
 
 module.exports = {
-  address: process.env.ELIGIBILITY_QUEUE_ADDRESS,
-  ...connectionDetails
+  applicationTopic: {
+    address: process.env.APPLICATION_TOPIC_ADDRESS,
+    subscription: process.env.APPLICATION_TOPIC_SUBSCRIPTION,
+    type: 'subscription',
+    ...connectionDetails
+  },
+  contactTopic: {
+    address: process.env.CONTACT_TOPIC_ADDRESS,
+    subscription: process.env.CONTACT_TOPIC_SUBSCRIPTION,
+    type: 'subscription',
+    ...connectionDetails
+  }
 }

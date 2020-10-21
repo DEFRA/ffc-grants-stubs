@@ -8,7 +8,10 @@ services:
     image: ffc-grants-stubs
     container_name: ffc-grants-stubs
     environment:
-      ELIGIBILITY_QUEUE_ADDRESS: ffc-grants-eligibility-${MESSAGE_QUEUE_SUFFIX}
       MESSAGE_QUEUE_HOST: ${MESSAGE_QUEUE_HOST:-notset}
       MESSAGE_QUEUE_PASSWORD: ${MESSAGE_QUEUE_PASSWORD:-notset}
       MESSAGE_QUEUE_USER: ${MESSAGE_QUEUE_USER:-notset}
+      APPLICATION_TOPIC_ADDRESS: ffc-grants-application-${MESSAGE_QUEUE_SUFFIX}
+      APPLICATION_TOPIC_SUBSCRIPTION: ffc-grants-formatter-${MESSAGE_QUEUE_SUFFIX}
+      CONTACT_TOPIC_ADDRESS: ffc-grants-contact-${MESSAGE_QUEUE_SUFFIX}
+      CONTACT_TOPIC_SUBSCRIPTION: ffc-grants-customer-${MESSAGE_QUEUE_SUFFIX}

@@ -4,5 +4,8 @@ data:
   NODE_ENV: {{ quote .Values.environment }}
   PORT: {{ quote .Values.container.port }}
   MESSAGE_QUEUE_HOST: {{ quote .Values.container.messageQueueHost }}
-  ELIGIBILITY_QUEUE_ADDRESS: {{ quote .Values.container.eligibilityQueueAddress }}
+  APPLICATION_TOPIC_ADDRESS: {{ quote .Values.container.applicationTopicAddress }}
+  CONTACT_TOPIC_ADDRESS: {{ quote .Values.container.contactTopicAddress }}
+  APPLICATION_TOPIC_SUBSCRIPTION: {{ quote .Values.container.applicationTopicSubscription }}
+  CONTACT_TOPIC_SUBSCRIPTION: {{ quote .Values.container.contactTopicSubscription }}
 {{- end -}}
