@@ -6,7 +6,7 @@ class MessageReceiver extends MessageBase {
     super(name, config, credentials)
     this.receiverHandler = this.receiverHandler.bind(this)
     this.action = action
-    this.receiver = this.queueClient.createReceiver(ReceiveMode.peekLock)
+    this.receiver = this.entityClient.createReceiver(ReceiveMode.peekLock)
     this.receiver.registerMessageHandler(this.receiverHandler, this.receiverError)
   }
 
