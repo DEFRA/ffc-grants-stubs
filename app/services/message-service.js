@@ -16,23 +16,23 @@ class MessageService {
   constructor (credentials) {
     this.closeConnections = this.closeConnections.bind(this)
 
-    const receiveEligibilityAction = async message => {
+    const receiveApplicationAction = async message => {
       const messageObj = JSON.parse(message)
 
-      if (messageObj.messageType === 'email') {
-        console.log('\n#####\nSend email message received:')
-        console.log(`Email address: ${messageObj.payload.emailAddress}`)
-        console.log(`Magic link: ${messageObj.payload.magicLink}\n`)
-      } else if (messageObj.messageType === 'eoiSubmitted') {
-        console.log('\n#####\nEOI submitted message received:')
-        console.log(`Confirmation ID: ${messageObj.payload.confirmationId}\n`)
-      } else {
-        console.log('\n#####\nUnknown message type received')
-        console.log(message)
-      }
+      console.log('\n#####\nEOI submitted message received:')
+      console.log(`Confirmation ID: ${messageObj.payload.confirmationId}\n`)
     }
 
-    this.eligibilityReceiver = new MessageReceiver('eligibility-queue-receiver', config, credentials, receiveEligibilityAction)
+    const receiveContactAction = async message => {
+      const messageObj = JSON.parse(message)
+
+      console.log('\n#####\nSend email message received:')
+      console.log(`Email address: ${messageObj.payload.emailAddress}`)
+      console.log(`Magic link: ${messageObj.payload.magicLink}\n`)
+    }
+
+    this.applicationReceiver = new MessageReceiver('application-topic-receiver', config.applicationTopic, credentials, receiveApplicationAction)
+    this.contactReceiver = new MessageReceiver('contact-topic-receiver', config.contactTopic, credentials, receiveContactAction)
   }
 
   async closeConnections () {

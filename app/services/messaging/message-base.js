@@ -14,7 +14,7 @@ class MessageBase {
       case 'topic':
         return this.sbClient.createTopicClient(config.address)
       case 'subscription':
-        return this.sbClient.createSubscriptionClient(config.topic, config.address)
+        return this.sbClient.createSubscriptionClient(config.address, config.subscription)
     }
   }
 

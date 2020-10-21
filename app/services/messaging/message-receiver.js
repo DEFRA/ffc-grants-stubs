@@ -16,7 +16,6 @@ class MessageReceiver extends MessageBase {
 
   async receiverHandler (message) {
     try {
-      console.log(`${this.name} received message`, message.body)
       await this.action(message.body)
     } catch (ex) {
       console.error(`${this.name} error with message`, ex)
