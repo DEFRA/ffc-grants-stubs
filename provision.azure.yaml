@@ -1,6 +1,4 @@
 resources:
   topics:
     - name: application
-      subscription: formatter
     - name: contact
-      subscription: customer
