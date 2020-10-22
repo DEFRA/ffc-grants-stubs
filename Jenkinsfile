@@ -1,3 +1,3 @@
-@Library('defra-library@v-8') _
+@Library('defra-library@psd-1014-provision-topics') _
 
 buildNodeJs environment: 'dev'
