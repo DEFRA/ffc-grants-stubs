@@ -6,6 +6,6 @@ data:
   MESSAGE_QUEUE_HOST: {{ quote .Values.container.messageQueueHost }}
   APPLICATION_TOPIC_ADDRESS: {{ quote .Values.container.applicationTopicAddress }}
   CONTACT_TOPIC_ADDRESS: {{ quote .Values.container.contactTopicAddress }}
-  APPLICATION_TOPIC_SUBSCRIPTION: {{ quote .Values.container.applicationTopicSubscription }}
-  CONTACT_TOPIC_SUBSCRIPTION: {{ quote .Values.container.contactTopicSubscription }}
+  APPLICATION_TOPIC_SUBSCRIPTION: {{ quote .Values.container.applicationSubscriptionAddress }}
+  CONTACT_TOPIC_SUBSCRIPTION: {{ quote .Values.container.contactSubscriptionAddress }}
 {{- end -}}
