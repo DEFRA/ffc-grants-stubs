@@ -33,9 +33,9 @@ container:
   port: 3000
   messageQueueHost: dummy
   applicationTopicAddress: application
-  applicationTopicSubscription: formatter
+  applicationSubscriptionAddress: formatter
   contactTopicAddress: contact
-  contactTopicSubscription: customer
+  contactSubscriptionAddress: customer
 
 livenessProbe:
   path: /healthz
