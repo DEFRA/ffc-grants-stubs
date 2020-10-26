@@ -7,13 +7,13 @@ const connectionDetails = {
 module.exports = {
   applicationTopic: {
     address: process.env.APPLICATION_TOPIC_ADDRESS,
-    subscription: process.env.APPLICATION_TOPIC_SUBSCRIPTION,
+    subscription: process.env.APPLICATION_SUBSCRIPTION_ADDRESS,
     type: 'subscription',
     ...connectionDetails
   },
   contactTopic: {
     address: process.env.CONTACT_TOPIC_ADDRESS,
-    subscription: process.env.CONTACT_TOPIC_SUBSCRIPTION,
+    subscription: process.env.CONTACT_SUBSCRIPTION_ADDRESS,
     type: 'subscription',
     ...connectionDetails
   }
