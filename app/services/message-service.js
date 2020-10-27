@@ -17,15 +17,15 @@ function createSpreadsheet (message) {
   const wb = XLSX.utils.book_new()
 
   wb.Props = {
-    Title: 'This is a test',
+    Title: `${message.confirmationId} Application`,
     Author: 'FFC EOI'
   }
 
-  wb.SheetNames.push('First Sheet')
+  wb.SheetNames.push('Application')
   const ws = XLSX.utils.json_to_sheet([message])
-  wb.Sheets['First Sheet'] = ws
+  wb.Sheets.Application = ws
 
-  XLSX.writeFile(wb, 'test123.xlsx')
+  XLSX.writeFile(wb, `${message.confirmationId}.xlsx`)
 
   console.log(`Created spreadsheet from application ${message.confirmationId}`)
 }
