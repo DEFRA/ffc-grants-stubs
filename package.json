@@ -14,7 +14,7 @@
   "dependencies": {
     "@azure/ms-rest-nodeauth": "^3.0.6",
     "@azure/service-bus": "^1.1.10",
-    "@hapi/hapi": "^20.0.0",
+    "@hapi/hapi": "^20.3.0",
     "xlsx": "^0.16.8"
   },
   "devDependencies": {
